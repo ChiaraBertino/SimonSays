@@ -6,14 +6,13 @@ function mostrarError(idElemento, mensaje) {
     elementoError.textContent = mensaje
 }
 
-// Función auxiliar para el forEach
-function limpiarTextoError(small) {
-    small.textContent = ''
-}
-
 function limpiarErrores() {
-    var mensajesError = document.querySelectorAll('.mensaje-error')
-    mensajesError.forEach(limpiarTextoError)
+    var mensajesError = document.querySelectorAll('.mensaje-error');
+    var i;
+
+    for (i = 0; i < mensajesError.length; i++) {
+        mensajesError[i].textContent = '';
+    }
 }
 
 function cerrarModal() {
@@ -59,7 +58,7 @@ function enviarPorMailto(nombre, apellido, email, mensaje) {
 // 3. VALIDACION DEL FORMULARIO
 
 function manejarSubmit(event) {
-    event.preventDefault() // Detiene el envío automático
+    event.preventDefault() 
 
     var nombreInput = document.getElementById('nombre')
     var apellidoInput = document.getElementById('apellido')

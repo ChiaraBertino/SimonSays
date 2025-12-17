@@ -4,7 +4,6 @@ var playerName = '';
 var secuencia = [];
 var usuarioSecuencia = [];
 var score = 0;
-
 var btnComenzar = document.getElementById('btnComenzar');
 var playerNameInput = document.getElementById('playerName');
 var inicioSection = document.getElementById('inicio');
@@ -70,16 +69,20 @@ function reproducirSecuencia() {
 }
 
 function verificarSecuencia() {
-    for(var i=0; i<usuarioSecuencia.length; i++) {
-        if(usuarioSecuencia[i] !== secuencia[i]) {
+    var i;
+
+    for (i = 0; i < usuarioSecuencia.length; i++) {
+        if (usuarioSecuencia[i] !== secuencia[i]) {
             enJuego = false;
             mostrarModal();
             return;
         }
     }
-    if(usuarioSecuencia.length === secuencia.length) {
-        score++;
-        actualizarScore();
+
+    score++;
+    actualizarScore();
+
+    if (usuarioSecuencia.length === secuencia.length) {
         usuarioSecuencia = [];
         agregarColorSecuencia();
     }
