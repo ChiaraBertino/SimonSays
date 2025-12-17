@@ -10,7 +10,7 @@ Bienvenido al proyecto **Simón Says**. Este es el Trabajo Final Integrador para
 4. **Sube de nivel**: Cada vez que aciertes la secuencia completa, se agregará un nuevo color y subirás de nivel.
 5. **Game Over**: Si te equivocas, el juego terminará, se guardará tu puntaje en el ranking y podrás reiniciar la partida.
 
-##  Estructura del Proyecto
+##  Estructura del proyecto
 
 * **index.html**: Estructura principal del juego y el tablero.
 * **contacto.html**: Formulario de contacto con validaciones.
