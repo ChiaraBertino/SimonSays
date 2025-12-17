@@ -1,0 +1,87 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+header, footer {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: #fff;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+#tablero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 300px;
+}
+
+/* Botones del tablero */
+.boton {
+    flex: 1 1 45%;
+    height: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Colores */
+.color-rojo { background-color: #ff4d4d; }
+.color-verde { background-color: #4dff4d; }
+.color-azul { background-color: #4d4dff; }
+.color-amarillo { background-color: #ffff4d; }
+
+/* Estilo para cuando el botón está activo (parpadeando) */
+.boton.activo {
+    filter: brightness(150%);  /* Aumenta el brillo */
+    transform: scale(1.1);     /* Aumenta el tamaño */
+    box-shadow: 0 0 15px white; /* Efecto de luz alrededor */
+}
+
+/* Ocultar elementos */
+.oculto { display: none; }
+
+/* Modal */
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal p {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#modal button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}

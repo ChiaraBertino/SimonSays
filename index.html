@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simón Dice</title>
+      <link rel="stylesheet" href="Styles/style-modal.css">
+      <link rel="stylesheet" href="Styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Simón Dice</h1>
+    </header>
+    <main>
+        <section id="inicio">
+            <label for="playerName">Ingresa tu nombre:</label>
+            <input type="text" id="playerName" placeholder="Mínimo 3 letras">
+            <button id="btnComenzar">Comenzar Juego</button>
+        </section>
+        <section id="juego" class="oculto">
+            <div id="tablero">
+                <div class="boton color-rojo" id="rojo"></div>
+                <div class="boton color-verde" id="verde"></div>
+                <div class="boton color-azul" id="azul"></div>
+                <div class="boton color-amarillo" id="amarillo"></div>
+            </div>
+            <p>Puntaje: <span id="score">0</span></p>
+        </section>
+        <div id="modal" class="oculto">
+            <p>¡Perdiste!</p>
+            <button id="btnReiniciar">Reiniciar</button>
+        </div>
+    </main>
+    <footer>
+        <a href="https://github.com/usuario/repositorio" target="_blank">Código en GitHub</a>
+        <a href="contacto.html">Contacto</a>
+    </footer>
+    <script src="Scripts/script.js"></script>
+</body>
+</html>
