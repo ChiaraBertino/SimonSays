@@ -50,15 +50,15 @@ main {
 .color-azul { background-color: #4d4dff; }
 .color-amarillo { background-color: #ffff4d; }
 
-/* Estilo para cuando el botón está activo (parpadeando) */
+/* Estilo para cuando el botón está activo */
 .boton.activo {
-    filter: brightness(150%);  /* Aumenta el brillo */
-    transform: scale(1.1);     /* Aumenta el tamaño */
-    box-shadow: 0 0 15px white; /* Efecto de luz alrededor */
+    filter: brightness(150%);  
+    transform: scale(1.1);   
+    box-shadow: 0 0 15px white; 
 }
 
 /* Ocultar elementos */
-.oculto { display: none; }
+.oculto { display: none !important; } 
 
 /* Modal */
 #modal {
@@ -69,8 +69,10 @@ main {
     height: 100%;
     background: rgba(0,0,0,0.6);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 1rem;
 }
 
 #modal p {
@@ -81,7 +83,6 @@ main {
 }
 
 #modal button {
-    margin-top: 1rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
 }
