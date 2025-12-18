@@ -87,13 +87,17 @@ function iniciarJuego() {
         alert('El nombre debe tener al menos 3 letras');
         return;
     }
+    
     playerName = nombre;
+
     inicioSection.classList.add('oculto');
     juegoSection.classList.remove('oculto');
+    juegoSection.classList.add('mostrar');
     score = 0;
     secuencia = [];
     usuarioSecuencia = [];
     enJuego = true;
+    
     actualizarScore();
     agregarColorSecuencia();
 }
