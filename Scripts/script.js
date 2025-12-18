@@ -4,6 +4,8 @@ var playerName = '';
 var secuencia = [];
 var usuarioSecuencia = [];
 var score = 0;
+var enJuego = false:
+
 var btnComenzar = document.getElementById('btnComenzar');
 var playerNameInput = document.getElementById('playerName');
 var inicioSection = document.getElementById('inicio');
@@ -12,8 +14,6 @@ var scoreDisplay = document.getElementById('score');
 var modal = document.getElementById('modal');
 var btnReiniciar = document.getElementById('btnReiniciar');
 var botones = document.querySelectorAll('.boton');
-
-var enJuego = false;
 
 function mostrarModal() {
     modal.classList.remove('oculto');
@@ -70,7 +70,6 @@ function reproducirSecuencia() {
 
 function verificarSecuencia() {
     var i;
-
     for (i = 0; i < usuarioSecuencia.length; i++) {
         if (usuarioSecuencia[i] !== secuencia[i]) {
             enJuego = false;
