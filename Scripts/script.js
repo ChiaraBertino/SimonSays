@@ -25,7 +25,7 @@ function resaltarColor(color) {
     setTimeout(function() {
         boton.classList.remove('activo');
     }, 400);
-} 
+}
 
 function mostrarModal() {
     modal.classList.remove('oculto');
@@ -54,19 +54,18 @@ function agregarColorSecuencia() {
 }
 
 function verificarSecuencia() {
-    var i; 
+    var i;
     for (i = 0; i < usuarioSecuencia.length; i++) {
-        if (usuarioSecuencia[i] !== secuencia[i]) { 
+        if (usuarioSecuencia[i] !== secuencia[i]) {
             enJuego = false;
             mostrarModal();
             return;
         }
     }
-    if (usuarioSecuencia.length === secuencia.length) { 
+    if (usuarioSecuencia.length === secuencia.length) {
         score++;
         actualizarScore();
         usuarioSecuencia = [];
-        
         setTimeout(function() {
             agregarColorSecuencia();
         }, 1000);
@@ -84,11 +83,10 @@ function manejarClickBoton() {
 
 function iniciarJuego() {
     var nombre = playerNameInput.value.trim();
-    if (nombre.length < 3) { 
+    if (nombre.length < 3) {
         alert('El nombre debe tener al menos 3 letras');
         return;
-    } 
-
+    }
     playerName = nombre;
     inicioSection.classList.add('oculto');
     juegoSection.classList.remove('oculto');
@@ -100,13 +98,11 @@ function iniciarJuego() {
     agregarColorSecuencia();
 }
 
-function reiniciarJuego() {
+btnComenzar.addEventListener('click', iniciarJuego);
+btnReiniciar.addEventListener('click', function() {
     ocultarModal();
     iniciarJuego();
-}
-
-btnComenzar.addEventListener('click', iniciarJuego); 
-btnReiniciar.addEventListener('click', reiniciarJuego);  
+});
 
 var j;
 for (j = 0; j < botones.length; j++) {
