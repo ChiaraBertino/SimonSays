@@ -15,12 +15,16 @@ var modal = document.getElementById('modal');
 var btnReiniciar = document.getElementById('btnReiniciar');
 var botones = document.querySelectorAll('.boton');
 
+function actualizarScore() {
+    scoreDisplay.textContent = score;
+}
+
 function resaltarColor(color) {
     var boton = document.getElementById(color);
-    boton.classList.add('activo')
-    setTimeout (function() {
+    boton.classList.add('activo');
+    setTimeout(function() {
         boton.classList.remove('activo');
-     }, 400);
+    }, 400);
 } 
 
 function mostrarModal() {
@@ -31,7 +35,7 @@ function ocultarModal() {
     modal.classList.add('oculto');
 }
 
-function reproducirSecuencia () {
+function reproducirSecuencia() {
     var i = 0;
     var interval = setInterval(function() {
         resaltarColor(secuencia[i]);
@@ -48,6 +52,7 @@ function agregarColorSecuencia() {
     secuencia.push(colores[random]);
     reproducirSecuencia();
 }
+
 function verificarSecuencia() {
     var i; 
     for (i = 0; i < usuarioSecuencia.length; i++) {
@@ -57,13 +62,17 @@ function verificarSecuencia() {
             return;
         }
     }
-if (usuarioSecuencia.length === secuencia.length) { 
+    if (usuarioSecuencia.length === secuencia.length) { 
         score++;
         actualizarScore();
         usuarioSecuencia = [];
-        agregarColorSecuencia();
+        
+        setTimeout(function() {
+            agregarColorSecuencia();
+        }, 1000);
     }
 }
+
 function manejarClickBoton() {
     if (!enJuego) {
         return;
@@ -78,6 +87,7 @@ function iniciarJuego() {
     if (nombre.length < 3) { 
         alert('El nombre debe tener al menos 3 letras');
         return;
+    } 
 
     playerName = nombre;
     inicioSection.classList.add('oculto');
@@ -95,10 +105,10 @@ function reiniciarJuego() {
     iniciarJuego();
 }
 
-btnComenzar.addEvenListener('click', iniciarJuego);
+btnComenzar.addEventListener('click', iniciarJuego); 
 btnReiniciar.addEventListener('click', reiniciarJuego);  
 
 var j;
 for (j = 0; j < botones.length; j++) {
     botones[j].addEventListener('click', manejarClickBoton);
-}    
+}
