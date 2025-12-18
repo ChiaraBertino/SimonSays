@@ -1,4 +1,4 @@
-/* 1. ESTILOS DE ELEMENTOS */
+/* ESTILOS DE ELEMENTOS */
 
 body {
   display: block;
@@ -44,34 +44,6 @@ textarea {
   transition: background-color 0.3s ease;
 }
 
-input:focus,
-textarea:focus {
-  border-color: #007bff;
-  outline: none;
-}
-
-button[type="submit"] {
-  padding: 10px 30px;
-  border: none;
-  border-radius: 8px;
-  background-color: #007bff;
-  color: #ffffff;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #0056b3;
-}
-
-/* 2. ESTILOS DE CLASES */
-
-
-.btn-volver:hover {
-  background-color: #c9302c;
-}
-
 .contenedor-formulario {
   display: flex;
   flex-wrap: wrap;
@@ -99,15 +71,16 @@ button[type="submit"]:hover {
 
 .modal {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
+  position: fidex;
   top: 0;
   left: 0;
   z-index: 999;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
+  
 }
 
 .modal-contenido {
@@ -134,7 +107,30 @@ button[type="submit"]:hover {
   display: none;
 }
 
-/* 3. MEDIA QUERIES */
+button[type="submit"] {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.btn-volver:hover {
+  background-color: #c9302c;
+}
+/*. MEDIA QUERIES */
 
 @media (max-width: 768px) {
   .contenedor-formulario {
