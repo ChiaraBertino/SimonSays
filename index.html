@@ -15,19 +15,19 @@
         <section id="inicio">
             <label for="playerName">Ingresa tu nombre:</label>
             <input type="text" id="playerName" placeholder="Mínimo 3 letras">
-            <button id="btnComenzar">Comenzar Juego</button>
+            <button id="btnComenzar" type="button">Comenzar Juego</button>
         </section>
         <section id="juego" class="oculto">
             <div id="tablero">
-                <div class="boton color-rojo" id="rojo"></div>
-                <div class="boton color-verde" id="verde"></div>
-                <div class="boton color-azul" id="azul"></div>
-                <div class="boton color-amarillo" id="amarillo"></div>
+            <div id="rojo" class="boton"></div>
+            <div id="verde" class="boton"></div>
+            <div id="azul" class="boton"></div>
+            <div id="amarillo" class="boton"></div>  
             </div>
-            <p>Nivel: <span id="nivel">1</span></p>
             <p>Puntaje: <span id="score">0</span></p>
         </section>
-        <div id="modal" class="oculto">
+        <div id="modal" class="modal oculto">
+          <div class="modal-contenido">
             <p>¡Perdiste!</p>
             <button id="btnReiniciar">Reiniciar</button>
         </div>
