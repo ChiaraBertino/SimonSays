@@ -134,7 +134,7 @@ function iniciarJuego() {
     actualizarScore();
     agregarColorSecuencia();
 }
-
+}
 btnComenzar.addEventListener('click', iniciarJuego);
 btnReiniciar.addEventListener('click', function() {
     ocultarModal();
