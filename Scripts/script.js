@@ -15,7 +15,7 @@ var scoreDisplay = document.getElementById('score');
 var modal = document.getElementById('modal');
 var btnReiniciar = document.getElementById('btnReiniciar');
 var botones = document.querySelectorAll('.boton');
-var mensajeEstado = document.getElementById('mensaje-estado');
+var mensajeEstado = document.getElementById('mensajeEstado');
 var mensajeErrorNombre = document.getElementById('error-nombre');
 
 function actualizarScore() {
@@ -93,6 +93,7 @@ function manejarClickBoton() {
     if (!enJuego || !puedeJugar ) {
         return;
     }
+    if (usuarioSecuencia.length >= secuencia.length )
     usuarioSecuencia.push(this.id);
     resaltarColor(this.id);
     verificarSecuencia();
@@ -100,7 +101,7 @@ function manejarClickBoton() {
 
 function iniciarJuego() {
     var nombre = playerNameInput.value.trim();
-    var mensajeError = document.getElementById('mensaje-error');
+    var mensajeError = document.getElementById('mensajeError');
     if (nombre.length < 3) {
     mensajeError.innerText = 'El nombre debe tener al menos 3 letras';
     mensajeError.style.display = 'block';
