@@ -86,3 +86,53 @@ main {
     padding: 0.5rem 1rem;
     cursor: pointer;
 }
+
+#inicio {
+    backround: white;
+    padding: 2rem;
+    border-radius: 10px;
+ }
+
+#inicio input {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#inicio button {
+    padding: 0.5rem 1rem;
+    background-color: #4dff4d;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Estilos para juego */
+#juego.mostrar {
+    display: flex;
+}
+
+/* Mensaje de estado */
+#mensajeEstado {
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+
+/* Mejorar modal */
+.modal-contenido {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.modal-contenido p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.modal-contenido button {
+    padding: 0.5rem 1rem;
+    background-color: #4dff4d;
+    border: none;
+    border-radius: 5px;
+}
