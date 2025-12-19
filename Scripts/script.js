@@ -93,7 +93,9 @@ function manejarClickBoton() {
     if (!enJuego || !puedeJugar ) {
         return;
     }
-    if (usuarioSecuencia.length >= secuencia.length )
+    if (usuarioSecuencia.length >= secuencia.length ) {
+        return;
+        
     usuarioSecuencia.push(this.id);
     resaltarColor(this.id);
     verificarSecuencia();
