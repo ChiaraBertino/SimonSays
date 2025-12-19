@@ -88,7 +88,6 @@ function verificarSecuencia() {
         }, 1200);
     }
 }
-
 function manejarClickBoton() {
     console.log('Click detectado - enJuego:', enJuego, 'puedeJugar:', puedeJugar);
     
@@ -98,7 +97,7 @@ function manejarClickBoton() {
     }
     
     if (usuarioSecuencia.length >= secuencia.length) {
-        console.log('Ya alcanzó el límite');
+        console.log('Ya alcanzó el límite de botones para este nivel');
         return;
     }
     
@@ -109,6 +108,7 @@ function manejarClickBoton() {
     
     resaltarColor(this.id);
     verificarSecuencia();
+
 }
 
 function iniciarJuego() {
