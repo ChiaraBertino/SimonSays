@@ -110,7 +110,6 @@ function manejarClickBoton() {
     resaltarColor(this.id);
     verificarSecuencia();
 }
-}
 
 function iniciarJuego() {
     var nombre = playerNameInput.value.trim();
@@ -133,7 +132,6 @@ function iniciarJuego() {
     
     actualizarScore();
     agregarColorSecuencia();
-}
 }
 btnComenzar.addEventListener('click', iniciarJuego);
 btnReiniciar.addEventListener('click', function() {
