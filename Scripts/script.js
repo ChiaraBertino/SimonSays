@@ -5,6 +5,7 @@ var secuencia = [];
 var usuarioSecuencia = [];
 var score = 0;
 var enJuego = false;
+var puedeJugar = false;
 
 var btnComenzar = document.getElementById('btnComenzar');
 var playerNameInput = document.getElementById('playerName');
@@ -14,9 +15,16 @@ var scoreDisplay = document.getElementById('score');
 var modal = document.getElementById('modal');
 var btnReiniciar = document.getElementById('btnReiniciar');
 var botones = document.querySelectorAll('.boton');
+var mensajeEstado = document.getElementById('mensaje-estado');
+var mensajeErrorNombre = document.getElementById('error-nombre');
 
 function actualizarScore() {
     scoreDisplay.textContent = score;
+}
+
+function actualizarMensaje (texto, esExito = false) {
+    mensajeEstado.innerText = texto;
+    mensajeEstado.style.color = esExito ? "green" : "black";
 }
 
 function resaltarColor(color) {
@@ -36,13 +44,19 @@ function ocultarModal() {
 }
 
 function reproducirSecuencia() {
+    puedeJugar = false;
+    actualizarMensaje("Observa la secuencia...");
+    
     var i = 0;
     var interval = setInterval(function() {
         resaltarColor(secuencia[i]);
         i++;
         if (i >= secuencia.length) {
             clearInterval(interval);
-        }
+            setTimeout(function() {
+                puedeJugar = true;
+                actualizarMensaje("¡Tu turno!");
+        }, 500);
     }, 800);
 }
 
@@ -63,17 +77,19 @@ function verificarSecuencia() {
         }
     }
     if (usuarioSecuencia.length === secuencia.length) {
+        puedeJugar = false;
         score++;
         actualizarScore();
         usuarioSecuencia = [];
+        actualizarMensaje("¡Bien, adivinaste!", true);
         setTimeout(function() {
             agregarColorSecuencia();
-        }, 1000);
+        }, 1200);
     }
 }
 
 function manejarClickBoton() {
-    if (!enJuego) {
+    if (!enJuego || !puedeJugar ) {
         return;
     }
     usuarioSecuencia.push(this.id);
@@ -83,7 +99,7 @@ function manejarClickBoton() {
 
 function iniciarJuego() {
     var nombre = playerNameInput.value.trim();
-    var mensajeError = document.getElementyById('mensaje-error');
+    var mensajeError = document.getElementById('mensaje-error');
     if (nombre.length < 3) {
     mensajeError.innerText = 'El nombre debe tener al menos 3 letras';
     mensajeError.style.display = 'block';
