@@ -57,6 +57,7 @@ function reproducirSecuencia() {
                 puedeJugar = true;
                 actualizarMensaje("¡Tu turno!");
         }, 500);
+      }      
     }, 800);
 }
 
