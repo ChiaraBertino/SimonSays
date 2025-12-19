@@ -83,8 +83,10 @@ function manejarClickBoton() {
 
 function iniciarJuego() {
     var nombre = playerNameInput.value.trim();
+    var mensajeError = document.getElementyById('mensaje-error');
     if (nombre.length < 3) {
-        alert('El nombre debe tener al menos 3 letras');
+    mensajeError.innerText = 'El nombre debe tener al menos 3 letras';
+    mensajeError.style.display = 'block';
         return;
     }
     
