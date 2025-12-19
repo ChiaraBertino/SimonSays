@@ -14,9 +14,15 @@
         <section id="inicio">
             <label for="playerName">Ingresa tu nombre:</label>
             <input type="text" id="playerName" placeholder="Mínimo 3 letras">
-            <button id="btnComenzar" type="button">Comenzar Juego</button>
+            <p id="error nombre" style="color: red; display: none; font-size: 14px; margin-top: 5px;">
+                El nombre debe tener al menos 3 letras 
+              </p>  
+                <button id="btnComenzar" type="button">Comenzar Juego</button>
         </section>
         <section id="juego">
+            <div id="contenedor-mensajes" style="margin-bottom: 15px; font-weight: bold; text-align: center;">
+                <p id="mensaje-estado">¡Presiona Comenzar para jugar!</p>
+            </div>
             <div id="tablero">
             <div class="boton color-rojo" id="rojo"></div>
             <div class="boton color-verde" id="verde"></div>
