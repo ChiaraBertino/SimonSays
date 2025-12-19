@@ -90,15 +90,26 @@ function verificarSecuencia() {
 }
 
 function manejarClickBoton() {
-    if (!enJuego || !puedeJugar ) {
+    console.log('Click detectado - enJuego:', enJuego, 'puedeJugar:', puedeJugar);
+    
+    if (!enJuego || !puedeJugar) {
+        console.log('No puede jugar aún');
         return;
     }
-    if (usuarioSecuencia.length >= secuencia.length ) {
+    
+    if (usuarioSecuencia.length >= secuencia.length) {
+        console.log('Ya alcanzó el límite');
         return;
-        
+    }
+    
+    console.log('Color clickeado:', this.id);
     usuarioSecuencia.push(this.id);
+    console.log('Secuencia usuario:', usuarioSecuencia);
+    console.log('Secuencia correcta:', secuencia);
+    
     resaltarColor(this.id);
     verificarSecuencia();
+}
 }
 
 function iniciarJuego() {
